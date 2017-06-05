@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <p>我想说:</p>
+
+    <script>
+        $(document).ready(function () {
+            //在p的后面追加b
+            $('p').append('<b>你好!</b>');
+
+            //把b追加到p后面
+            $('<b>你好!</b>').appendTo('p');
+
+            //在p的前面追加b
+            $('p').prepend('<b>你好,</b>');
+
+            //把b追加到p的前面
+            $('<b>你好,</b>').prependTo('p');
+
+            //在p的元素后面插入内容b
+            $('p').after('<b>你好!</b>');
+
+            //将所有匹配的元素插入到指定元素的后面
+            $(('<b>大家好!</b>')).insertAfter('p');
+
+            //把b元素插入p的前面
+            $('p').before('<b>同事们好!</b>');
+
+            //将所有匹配的元素插入到指定元素的前面
+            $(('<b>同事们好啊!</b>')).insertBefore('p');
+        })
+    </script>
+</body>
+</html>

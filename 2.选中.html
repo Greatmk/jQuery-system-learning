@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom:0;
+            margin: auto;
+        }
+        #check{
+            width: 60px;
+            height: 60px;
+            vertical-align: bottom;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <input type="checkbox" name="check" id="check">
+        <label for="check">我已经阅读上面的协议!</label>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#check').click(function () {
+                if($('#check')[0].checked){
+                    alert('恭喜你同意以上协议!你可以开始购买投资理财产品了!!');
+                }
+               if($('#check').is(':checked')){
+                   alert('恭喜你同意以上协议!你可以开始购买投资理财产品了!!');
+               }
+            });
+        });
+    </script>
+</body>
+</html>

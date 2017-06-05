@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        h5{
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #000;
+            background-color: #ccc;
+            text-align: center;
+        }
+        h5:hover{
+            cursor: pointer;
+        }
+        .boxContent{
+            height: 300px;
+            border: 1px solid #000;
+            display: none;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <h5 class="title">今天我5月13号继续学习jQuery的第四章节!</h5>
+        <div class="boxContent">
+            主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+            主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+            主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+            主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+            主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+            主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            /*方法一:是最常用的方法 利用中间变量falg*/
+            var flag = true;
+            $('.title').on('click',function () {
+
+                $('.boxContent').css('border-top','0');
+                if(flag){
+                    flag = false;
+                    $(this).next().show();
+                }else{
+                    flag = true;
+                    $(this).next().hide();
+                }
+            })
+
+
+            /*方法二: 利用jQuery里面的is()方法*/
+            $('.title').on('click',function () {
+                $('.boxContent').css('border-top','0');
+                if($(this).next().is(':visible')){
+                    $(this).next().hide();
+                }else{
+                    $(this).next().show();
+                }
+            })
+
+            /*此小案例说明 让一个元素来回的显示与隐藏,来回的切换,有两种常用的方法,一个就是利用中间变量flag,还有一个就是利用jQuery中的is()方法!!牢记!!!*/
+        })
+    </script>
+</body>
+</html>

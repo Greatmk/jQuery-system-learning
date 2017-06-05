@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="title"><strong>今天来公司早,学习!</strong></div>
+    <script>
+        $(document).ready(function () {
+            /* html获取的是html里面的所有内容,如果有标签,都会获取到
+            *  text获取的是文本内容,只会获取文本内容!!
+            *  val也可以获取内容,不管是单选框还是复选框还是文本都可以获取的到!
+            * */
+            console.log($('.title').html());
+            console.log($('.title').text());
+
+            $('.title').html('<strong>今天来公司早,学习什么呢!</strong>');
+            $('.title').text('早上好!持续不断的....');
+
+
+        })
+    </script>
+</body>
+</html>

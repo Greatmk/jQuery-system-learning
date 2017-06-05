@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <form action="#">
+        姓名:<input type="text" name="name" id="text"><br>
+        密码:<input type="password" name="psd" id="btn"><br>
+        <input type="submit" value="提交" id="submit">
+    </form>
+    <script>
+        $(function () {
+            $('#submit').click(function (e) {
+                console.log($('#text').serialize());
+                console.log($('#btn').serialize());
+                e.preventDefault();
+            })
+        })
+    </script>
+</body>
+</html>

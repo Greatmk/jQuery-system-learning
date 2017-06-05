@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        h5{
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #000;
+            background-color: #ccc;
+            text-align: center;
+        }
+        h5:hover{
+            cursor: pointer;
+        }
+        .boxContent{
+            height: 300px;
+            border: 1px solid #000;
+            display: none;
+        }
+        .pink{
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <h5 class="title">今天我5月13号继续学习jQuery的第四章节!</h5>
+    <div class="boxContent">
+        主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+        主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+        主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+        主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+        主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+        主要讲的就是点击事件,on元素绑定点击事件!!..........<br>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        /*方法一:hover方法 牛!今天第一次学到了这么好的方法!!效果杠杠的!!还简单!!*/
+        /*hover(enter,leave),hover后面会执行两个函数*/
+        $('.title').hover(function () {
+            $('.boxContent').css('border-top','0')
+            $(this).next().show();
+            $(this).addClass('pink');
+        },function () {
+            $(this).next().hide();
+            $(this).removeClass('pink');
+        })
+
+        /*方法二:利用mouseover鼠标移入事件和mouseout鼠标离开事件*/
+        $('.title').mouseover(function () {
+            $('.boxContent').css('border-top','0');
+            $(this).next().show();
+            $(this).addClass('pink');
+        }).mouseout(function () {
+            $(this).next().hide();
+            $(this).removeClass('pink');
+        })
+
+    })
+</script>
+</body>
+</html>

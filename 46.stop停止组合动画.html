@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .animate_box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: #d43f3a;
+            cursor: pointer;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+<div class="animate_box">
+
+</div>
+
+<script>
+    /*stop停止动画,当用户快速移入移出时候,会执行动画,所以每次触发的时候要先stop一下,清一下上一次的留下的动画特效,若不清,动画会一直自动触发效果*/
+    $(function () {
+        $('.animate_box').css('opacity',.2);
+
+        $('.animate_box').hover(function () {
+            $(this).stop(true).animate({height:'500px'},1000)
+                          .animate({width:'500px'},1000);
+        },function () {
+            $(this).stop(true).animate({height:'100px'},1000)
+                          .animate({width:'100px'},1000);
+        })
+
+    })
+</script>
+</body>
+</html>

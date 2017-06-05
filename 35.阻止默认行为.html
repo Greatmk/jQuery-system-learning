@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #text{
+            width: 200px;
+            height: 20px;
+            border: 1px solid #000;
+        }
+        form{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #sub{
+            width: 50px;
+            height: 30px;
+            background-color: #2aabd2;
+            border: none;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <form action="">
+        用户名: <input type="text" id="text"><br><br>
+        <input type="submit" id="sub" value="提交">
+    </form>
+    <script>
+        /*表单当单击提交按钮的时候,会自动提交,所以有时候需要阻止默认行为!*/
+        /*return false 可以阻止事件冒泡和默认行为,是它俩的简写!*/
+        $(function () {
+           $('#sub').on('click',function (e) {
+               if($('#text').val() == ''){
+                  alert('请输入用户名!');
+                  e.preventDefault();
+               }else{
+                   console.log($('#text').val());
+                   e.preventDefault();
+               }
+           })
+        })
+    </script>
+</body>
+</html>

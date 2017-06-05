@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bgc{
+            background-color: purple;
+        }
+        .color1{
+            color: red;
+        }
+        .color2{
+            color: blue;
+        }
+        .bgc2{
+            background-color: lightpink;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box1">我是box1</div>
+    <div class="box2">我是box2</div>
+    <script>
+        $(document).ready(function () {
+
+            /*addClass是给某个元素添加类 在原来的基础上添加类,而attr是设置或者获取 如果是设置的话,需要两个参数,相同类的情况下,之前的定义的就会被干掉*/
+
+            $('.box1').addClass('color1');
+            $('.box2').addClass('color2');
+            $('.box1').attr('style','color:yellowgreen');
+            $('.box2').attr('style','color:hotpink');
+
+
+            $('.box1').attr('class','bgc');
+            $('.box2').attr('class','bgc2');
+        })
+    </script>
+</body>
+</html>

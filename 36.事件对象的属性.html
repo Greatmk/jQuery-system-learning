@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container h5{
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h5>今天是星期天,休息的同时学习jQuery!</h5>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.container h5').hover(function (e) {
+                $(this).css('background-color','skyblue');
+            },function () {
+                $(this).css('background-color','white');
+            })
+
+            /*event.type可以知道事件触发对象的类型*/
+            /*event.pageX 和 event.pageY 是获取当前鼠标相对于页面坐标的x和y */
+
+            $('.container h5').click(function (e) {
+                alert(e.type);
+                alert(e.pageX);
+                alert(e.pageY);
+                alert(e.which);
+            })
+
+        })
+    </script>
+</body>
+</html>

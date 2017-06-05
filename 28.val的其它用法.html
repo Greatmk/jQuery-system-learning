@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+     <select  id="single">
+         <option >选择1号</option>
+         <option >选择2号</option>
+         <option >选择3号</option>
+     </select>
+
+     <select multiple="multiple" id="multiple" style="height: 120px;">
+         <option selected="selected">选择1号</option>
+         <option>选择2号</option>
+         <option>选择3号</option>
+         <option>选择4号</option>
+         <option selected="selected">选择5号</option>
+     </select>
+
+     <input type="checkbox" value="check1">多选1
+     <input type="checkbox" value="check2">多选2
+     <input type="checkbox" value="check3">多选3
+     <input type="checkbox" value="check4">多选4
+     <input type="checkbox" value="check5">多选5
+     <input type="checkbox" value="check6">多选6
+
+     <input type="radio" value="radio1">单选1
+     <input type="radio" value="radio2" id="ww">单选2
+     <input type="radio" value="radio3">单选3
+
+     <script>
+         $(document).ready(function () {
+
+             /*以下是val的选中状态的用法!*/
+
+             $('#single').val('选择3号');
+
+             $('#multiple').val(['选择3号','选择4号']);
+
+             $(':checkbox').val(['check3','check6']);
+
+             $(':radio').val(['radio1','radio3']);
+
+             $('#single option:nth-child(2)').attr('selected','true');
+
+//             $('#multiple option:nth-child(5)').attr('selected','true');
+//             $('[value=radio2]:radio').attr('checked','true');
+//             $('#ww').attr('checked','true');
+         })
+     </script>
+</body>
+</html>

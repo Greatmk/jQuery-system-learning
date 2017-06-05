@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <p class="text">练习一下选择器</p>
+    <h1>我是h1标签</h1>
+    <h2>我是h2标签</h2>
+    <h3>我是h3标签</h3>
+
+    <div class="box">
+        <ul>
+            <li>我是第1个li</li>
+            <li>我是第2个li</li>
+            <li>我是第3个li</li>
+            <li class="four">我是第4个li</li>
+            <li>我是第5个li</li>
+            <li>我是第6个li</li>
+            <li>我是第7个li</li>
+            <li>我是第8个li</li>
+            <li>我是第9个li</li>
+            <li>我是第10个li</li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div title="en">我的title为en</div>
+        <div title="en-UK">我的title为en-UK</div>
+        <div title="english">我的title为english</div>
+        <div title="en uk">我的title为en uk</div>
+        <div title="uken">我的title为uken</div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //检查某个元素是否存在
+            if($('.text').length > 0){
+                alert('有text这个类!!这是正确的写法');
+            }
+
+            if($('.text')){
+                alert('有text这个类!! 尽量不要这样写');
+            }
+            if($('.text')[0]){
+                alert('有text这个类!!这是正确的写法');
+            }
+
+
+            $('.box .four').prevAll('li').css('background','skyblue');
+            $('.box .four').nextAll('li').css('background','skyblue');
+            $('.box .four').siblings('li').css('background','skyblue');
+            $('.box .four + li').css('background','red');
+
+            $(':header').css('background','purple');
+
+            $('div[title="en"]').css('background','pink');
+            $('div[title^="en"]').css('background','yellowgreen');
+            $('div[title*="en"]').css('background','#389');
+
+        });
+    </script>
+</body>
+</html>

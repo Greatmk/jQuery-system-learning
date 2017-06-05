@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            /*原生写法*/
+            $('#cr').click(function () {
+                if($('#cr')[0].checked){
+                    alert("原生写法弹出,感谢你的支持！你可以继续操作");
+                }
+            });
+
+            /*jQuery写法*/
+            $('#cr').click(function () {
+                if( $('#cr').is(':checked')){
+                    alert("jQuery写法弹出,感谢你的支持！你可以继续操作");
+                }
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+
+    <div class="box">
+        <input type="checkbox"  id="cr">
+        <label for="cr">我已经阅读了上面制度</label>
+    </div>
+
+
+</body>
+</html>

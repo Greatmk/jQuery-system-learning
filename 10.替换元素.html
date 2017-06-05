@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <p title="你最喜欢的水果是?">你最喜欢的水果是?</p>
+    <ul>
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>桃子</li>
+    </ul>
+    <script>
+        $(document).ready(function () {
+
+            /*替换元素方法  replaceWith*/
+            $('p').replaceWith('<strong title="你最不喜欢的水果是?">你最不喜欢的水果是?</strong>');
+
+            /*替换元素方法 replaceAll*/
+            $('<strong title="你最不喜欢的水果是?">你最不喜欢的水果是?</strong>').replaceAll('p');
+        })
+    </script>
+</body>
+</html>

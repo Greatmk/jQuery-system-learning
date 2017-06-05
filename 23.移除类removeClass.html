@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .fs{
+            font-size: 40px;
+        }
+        .color{
+            color: red;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="fs color" id="study">我今晚在认真的学习jQuery!</div>
+
+    <script>
+        $(document).ready(function () {
+
+            /*removeClass是移除某个元素的类,也可以一次性移除多个类,如下操作就可以移除多个类*/
+
+            $('#study').removeClass('fs color');
+
+            /*当removeClass不带参数的时候,可以一次性移除多个类*/
+            $('#study').addClass('fs color');
+            $('#study').removeClass();
+        })
+    </script>
+</body>
+</html>

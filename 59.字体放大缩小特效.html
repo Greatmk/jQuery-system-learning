@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <button class="big">放大</button>
+    <button class="small">缩小</button>
+    <div class="text">
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+        我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! 我们都是一家人! <br>
+    </div>
+
+    <script>
+        $(function () {
+            /*此案例一定要记住:
+                1.首先要获取到当前文本文字的大小 如:16px
+                2.其次要通过 parseFloat 方法拿到文字大小的数字 16
+            */
+            $('.big').click(function () {
+                var font_size = $('.text').css('font-size');
+                var font_number = parseFloat(font_size);
+
+                if(font_number < 50){
+                    var newSize = font_number + 2;
+                    $('.text').css('font-size',newSize);
+                }else{
+                    return false;
+                }
+            })
+
+            $('.small').click(function () {
+                var font_size = $('.text').css('font-size');
+                var font_number = parseFloat(font_size);
+
+                if(font_number > 16){
+                    var newSize = font_number - 2;
+                    $('.text').css('font-size',newSize);
+                }else{
+                    return false;
+                }
+            })
+
+
+        })
+    </script>
+</body>
+</html>

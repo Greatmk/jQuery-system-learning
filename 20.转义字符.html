@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+   <div class="container">
+       <div id="#box">我是#box</div>
+       <div id="bo[]x">我是bo[]x</div>
+   </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#\\#box').css('color','red');
+            $('#bo\\[\\]x').css('color','blue');
+        });
+    </script>
+</body>
+</html>

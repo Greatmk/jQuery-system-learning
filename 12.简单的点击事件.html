@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <p>测试一</p>
+    <p>测试二</p>
+    <p>测试三</p>
+
+    <script>
+        $(function () {
+            //jQuery写法
+            $('p').click(function () {
+                alert($(this).text());
+            });
+
+        });
+        //用原生的写法
+        onload = function () {
+            var ArrP = document.getElementsByTagName('p');
+            console.log(ArrP);
+            for (var i = 0; i < ArrP.length; i++) {
+                ArrP[i].onclick = function () {
+                    alert($(this).text());
+                }
+
+            }
+        }
+
+
+    </script>
+</body>
+</html>

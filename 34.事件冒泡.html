@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .content{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        span{
+            height: 30px;
+            line-height: 30px;
+            background-color: rebeccapurple;
+            display: block;
+            text-align: center;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        我是外部div元素<br>
+        <span>我是内部的span元素!</span>
+        我是外部div元素
+    </div>
+    <div class="msg"></div>
+    <script>
+        /*阻止事件冒泡e.stopPropagation*/
+        $(document).ready(function () {
+            $('span').on('click',function (e) {
+                var txt = $('.msg').html() + '<p style="color: purple">内层span元素被点击</p>';
+                $('.msg').html(txt);
+                e.stopPropagation();
+            })
+
+            $('.content').on('click',function (e) {
+                var txt = $('.msg').html() + '<p style="color: red">外部div元素被点击</p>';
+                $('.msg').html(txt);
+                e.stopPropagation();
+            })
+
+            $('body').on('click',function (e) {
+                var txt = $('.msg').html() + '<p style="color: greenyellow">外部body元素被点击</p>';
+                $('.msg').html(txt);
+                e.stopPropagation();
+            })
+        })
+    </script>
+</body>
+</html>

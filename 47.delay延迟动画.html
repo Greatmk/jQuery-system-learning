@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .animate_box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: #d43f3a;
+            cursor: pointer;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+<div class="animate_box">
+
+</div>
+
+<script>
+    /*delay 方法是延迟动画的执行时间*/
+    $(function () {
+        $('.animate_box').css('opacity',.2);
+
+        /* if (!$('.animate_box').is(':animated')){}判断元素是否处于动画状态*/
+
+        $('.animate_box').hover(function () {
+            $(this).stop(true).animate({height:'500px'},1000)
+                .delay(1000)
+                .animate({width:'500px'},1000);
+        },function () {
+            $(this).stop(true).animate({height:'100px'},1000)
+                .delay(1000)
+                .animate({width:'100px'},1000);
+        })
+
+
+
+    })
+</script>
+</body>
+</html>

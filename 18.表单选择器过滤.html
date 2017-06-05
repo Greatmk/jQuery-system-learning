@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #form1 input:nth-child(1){
+            width: 300px;
+            height: 100px;
+        }
+        #form1 input[type='checkbox']{
+            width: 60px;
+            height: 60px;
+        }
+        #form1 input[type='file']{
+           border-radius: 5px;
+        }
+        #form1 #psd{
+            border-radius: 10px;
+            outline: none;
+        }
+        #form1 input[type='radio']{
+            width: 60px;
+            height: 60px;
+        }
+        #form1 input[type='reset']{
+            width: 100px;
+            height: 100px;
+        }
+        #form1 input[type='submit']{
+            width: 200px;
+            height: 100px;
+        }
+        #form1 #txt{
+            width: 800px;
+            height: 100px;
+            outline: none;
+            border: 1px solid #000;
+        }
+        #form1 select{
+            width: 300px;
+            height: 200px;
+        }
+        #form1 #tar{
+            border-radius: 10px;
+        }
+        #form1 button{
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <form action="#" id="form1">
+        <input type="button" value="Button"><br/><br/>
+        <input type="checkbox" name="c">1
+        <input type="checkbox" name="c">2
+        <input type="checkbox" name="c">3<br/><br/>
+        <input type="file" name="" id="file"><br/><br/>
+        <input type="hidden" name=""><div style="display: none">test</div><br/><br/>
+        <input type="image" src="" alt=""><br/><br/>
+        <input type="password" name="" id="psd"><br/><br/>
+        <input type="radio" name="a" id="rdi">1&nbsp;&nbsp;<input type="radio" name="a">2<br/><br/>
+        <input type="reset" value=""><br/><br/>
+        <input type="submit" value="提交"><br><br/>
+        <input type="text" name="" id="txt"><br/><br/>
+        <select name="" id="">
+            <option value="">Option</option>
+        </select><br/><br/>
+        <textarea name="" id="tar" cols="30" rows="10"></textarea><br/><br/>
+        <button>Button</button><br/>
+    </form>
+    <script>
+//       console.log( $("#form1 :input").length);
+//       console.log( $("#form1 :text").length);
+//       console.log( $("#form1 :password").length);
+//       console.log( $("#form1 :checkbox").length);
+        $(document).ready(function () {
+            $('#form1 input:checkbox').click(function () {
+               if( $('#form1 input:checked')){
+                   alert('您选中了'+$('#form1 input:checked').length+'个盒子!');
+                   return;
+               }
+            });
+            $('#form1 input:radio').click(function () {
+                if($('#form1 input:checked')){
+                    alert('您选中了'+$('#form1 input:checked').length+'个盒子!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box" title="今天学习了attr获取元素属性值">今天学习attr</div>
+    <script>
+        $(document).ready(function () {
+            /*attr设置一个参数,表示获取元素的属性值*/
+            console.log($('.box').attr('title'));
+
+            /*attr设置两个参数,表示设置元素的属性值*/
+            $('.box').attr('disabled','disabled');
+            $('.box').attr('style','color:red');
+
+            /*如何要给某个元素设置多个属性,可以按照下面的写法去写,用大括号括起来!*/
+            $('.box').attr({'name':'xiaoming','age':'18'});
+
+            /*html属性是获取元素的值,类似的方法还有很多总结如下*/
+            console.log($('.box').html());
+            $('.box').html('我今天加班了').css('color','blue');
+
+            /* html , text , height , width , val , css */
+
+
+
+
+            /*删除某个元素的属性值  用removeAttr*/
+            $('.box').removeAttr('title');
+        })
+    </script>
+</body>
+</html>

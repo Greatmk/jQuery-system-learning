@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style:none;
+        }
+        .box{
+            margin: 100px;;
+        }
+        #address,#password{
+            width: 200px;
+            height: 25px;
+            outline: none;
+            color: #ccc;
+            text-indent: 5px;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+   <div class="box">
+       邮箱地址: <input type="text" id="address" value="请输入邮箱地址"><br><br>
+       邮箱密码: <input type="text" id="password" value="请输入邮箱密码"><br><br>
+       <input type="button" value="登陆">
+   </div>
+
+   <script>
+       $(document).ready(function () {
+
+           $('#address').focus(function () {
+              var value = $('#address').val();
+              if(value == '请输入邮箱地址'){
+                    $(this).val('');
+              }
+              console.log(this.defaultValue);
+           })
+
+           $('#address').blur(function () {
+               var value = $('#address').val();
+               if(value == ''){
+                   $(this).val('请输入邮箱地址');
+               }
+           })
+
+           $('#password').focus(function () {
+               var value = $('#password').val();
+               if(value == '请输入邮箱密码'){
+                   $(this).val('');
+               }
+               console.log(this.defaultValue);
+           })
+
+           $('#password').blur(function () {
+               var value = $('#password').val();
+               if(value == ''){
+                   $(this).val('请输入邮箱密码');
+               }
+           })
+
+           /*defalutValue 是获取文本框的初始值*/
+       })
+   </script>
+</body>
+</html>

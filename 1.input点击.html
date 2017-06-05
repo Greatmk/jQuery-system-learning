@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin: auto;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <input type="checkbox" name="" id="cr"> <label for="cr">我已经阅读了上面的内容</label>
+    </div>
+    <script>
+       $(document).ready(function () {
+           //用DOM方法操作
+           $('#cr').click(function () {
+                if($('#cr')[0].checked){
+                    alert('感谢您的支持!您可以继续操作以下内容!');
+                }
+           });
+
+           //用jQuery方法操作
+           $('#cr').click(function () {
+               if($('#cr').is(':checked')){
+                   alert('感谢您的支持!您可以继续操作以下内容!');
+                   console.log($('#cr').is(':checked'));
+                   console.log($('label').text());
+                   console.log($('label').html());
+               }
+           });
+
+
+          /* 解决jQuery与其他库的冲突
+
+            $123 =  jQuery.noConflict();
+
+            以前我们都是用 $ 来简写 jQuery, 当用很多插件的时候, 有时候会起冲突
+            所以,就可以改变其命名  用以上方法就可以!!要牢记!!!
+
+
+           */
+       });
+    </script>
+</body>
+</html>

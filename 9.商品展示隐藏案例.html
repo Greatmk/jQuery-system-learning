@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul,li{
+          list-style: none;
+        }
+        .SubCategoryBox{
+            width: 1501px;
+            height: 1500px;
+            /*border: 1px solid #000;*/
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .SubCategoryBox > ul{
+            overflow: hidden;
+        }
+        .SubCategoryBox > ul > li{
+            margin: 10px 35px;
+            float: left;
+        }
+        .showmore{
+            width: 300px;
+            height: 80px;
+            line-height:80px;
+            text-align: center;
+            margin-left: 580px;
+        }
+        .showmore a{
+            text-decoration: none;
+        }
+        .showmore a:hover{
+            color: #c9302c;
+        }
+        .promoted{
+            color: red;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="SubCategoryBox">
+        <ul>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能3</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能6</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能8</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">佳能</a> <i>(30440)</i></li>
+            <li><a href="#">其他品牌相机</a> <i>(7275)</i></li>
+        </ul>
+        <div class="showmore">
+            <a href="#"><span>显示全部品牌</span></a>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('ul li:gt(11):not(:last)').hide();
+            var flag;
+               if(flag){
+                   flag = false;
+                   $('ul li:gt(11):not(:last)').show();
+                   $(this).find('span').text('精简显示品牌');
+                   $('ul li')
+                       .filter(":contains('佳能3'),:contains('佳能6'),:contains('佳能8')")
+                       .addClass('promoted');
+                   return false;
+               }else{
+                   flag = true;
+                   $('ul li:gt(11):not(:last)').hide();
+                   $(this).find('span').text('显示全部品牌');
+                   $('ul li')
+                       .filter(":contains('佳能3'),:contains('佳能6'),:contains('佳能8')")
+                       .removeClass('promoted');
+                   return false;
+               }
+
+
+
+               //第二种方法
+           /* $('.showmore a').click(function () {
+                if( $('ul li:gt(11):not(:last)').is(':visible')){
+                   $('ul li:gt(11):not(:last)').hide();
+                   $(this).find('span').text('显示全部品牌');
+                   $('ul li')
+                       .filter(":contains('佳能3'),:contains('佳能6'),:contains('佳能8')")
+                       .removeClass('promoted');
+                   return false;
+                }else{
+                   $('ul li:gt(11):not(:last)').show();
+                   $(this).find('span').text('精简显示品牌');
+                   $('ul li')
+                       .filter(":contains('佳能3'),:contains('佳能6'),:contains('佳能8')")
+                       .addClass('promoted');
+                   return false;
+                }
+            })*/
+
+
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            list-style: none;
+        }
+        .box{
+            width: 600px;
+            height: 30px;
+            border: 1px solid #000;
+            background-color: #2aabd2;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            line-height: 30px;
+        }
+        .menu > li{
+            float: left;
+            margin: 0 30px;
+        }
+        .menu > li a{
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .menu > li ul{
+            display: none;
+        }
+        .current{
+            background-color: #ff6600;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <ul class="menu">
+            <li class="leval1">
+                <a href="#">衬衫1</a>
+                <ul class="leval11">
+                    <li><a href="#">短衬衫</a></li>
+                    <li><a href="#">长衬衫</a></li>
+                    <li><a href="#">短T</a></li>
+                    <li><a href="#">长T</a></li>
+                </ul>
+            </li>
+            <li class="leval1">
+                <a href="#">衬衫2</a>
+                <ul class="leval22">
+                    <li><a href="#">短衬衫</a></li>
+                    <li><a href="#">长衬衫</a></li>
+                    <li><a href="#">短T</a></li>
+                    <li><a href="#">长T</a></li>
+                </ul>
+            </li>
+            <li class="leval1">
+                <a href="#">衬衫3</a>
+                <ul class="leval33">
+                    <li><a href="#">短衬衫</a></li>
+                    <li><a href="#">长衬衫</a></li>
+                    <li><a href="#">短T</a></li>
+                    <li><a href="#">长T</a></li>
+                </ul>
+            </li>
+            <li class="leval1">
+                <a href="#">衬衫4</a>
+                <ul class="leval44">
+                    <li><a href="#">短衬衫</a></li>
+                    <li><a href="#">长衬衫</a></li>
+                    <li><a href="#">短T</a></li>
+                    <li><a href="#">长T</a></li>
+                </ul>
+            </li>
+            <li class="leval1" >
+                <a href="#" id="aa">衬衫5</a>
+                <ul class="leval55">
+                    <li><a href="#">短衬衫</a></li>
+                    <li><a href="#">长衬衫</a></li>
+                    <li><a href="#">短T</a></li>
+                    <li><a href="#">长T</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.leval1 > a').click(function () {
+                $(this).addClass('current')
+                    .next().show()
+                    .parent().siblings().children('a').removeClass('current')
+                    .next().hide();
+                return false;
+            });
+            console.log($('.menu > .leval1:eq(4) > a').html());
+
+            console.log(document.getElementById('aa').innerHTML);
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bgc{
+            background-color: deeppink;
+        }
+        .box{
+            font-size: 40px;
+            color: royalblue;
+            text-align: center;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box">今晚在努力学习jQuery呢!</div>
+
+    <script>
+       /*用jQuery的方法toggleClass一个方法就可以搞定 来回的切换*/
+        $(document).ready(function () {
+            $('.box').click(function () {
+                $('.box').toggleClass('bgc');
+            })
+
+        })
+
+
+
+        /*非常传统的方法,定义一个变量flag,这个方法用来,来回切换的.用处非常的广,一定要理解透!!*/
+        var flag;
+        $(document).ready(function () {
+            $('.box').click(function () {
+                if(flag){
+                    flag = false;
+                    $('.box').addClass('bgc');
+                }else{
+                    flag = true;
+                    $('.box').removeClass('bgc');
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

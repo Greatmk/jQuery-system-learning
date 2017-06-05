@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <form action="#" id="form1">
+        可用元素: <input name="add" value="可用文本框"><br>
+        不可用元素: <input name="email" disabled="disabled" value="不可用文本框"><br>
+
+        多选框:<br/>
+        <input type="checkbox" name="newsleter" value="text1" checked="checked">text1
+        <input type="checkbox" name="newsleter" value="text2">text2
+        <input type="checkbox" name="newsleter" value="text3" checked="checked">text3
+        <input type="checkbox" name="newsleter" value="text4">text4
+        <input type="checkbox" name="newsleter" value="text5" checked="checked">text5<br>
+
+        下拉列表1:<br/>
+        <select name="test" multiple="multiple" style="height: 100px;width:50px ;text-align: center;">
+            <option value="">浙江</option>
+            <option value="">上海</option>
+            <option value="" selected="selected">安徽</option>
+            <option value="">湖南</option>
+            <option value="">湖北</option>
+            <option value="">深圳</option>
+            <option value="">广州</option>
+            <option value="" selected="selected">北京</option>
+        </select>
+        <br/><br/>
+        下拉列表2:<br/>
+        <select name="test" style="text-align: center;">
+            <option value="">浙江</option>
+            <option value="">上海</option>
+            <option value="" selected="selected">安徽</option>
+            <option value="">湖南</option>
+            <option value="">湖北</option>
+            <option value="">深圳</option>
+            <option value="">广州</option>
+            <option value="" selected="selected">北京</option>
+        </select>
+    </form>
+
+    <script>
+        $(function () {
+            $('#form1 input:enabled').val('改变啦!');
+            $('#form1 input:disabled').val('不可改变的也要被改变!!');
+            console.log($('#form1 input:checked').length);
+            console.log($('select:selected').text());
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <ul class="con_ul">
+            <li>香蕉</li>
+            <li>苹果</li>
+            <li>桃子</li>
+            <ul class="con_ull">
+                <li class="xj">香蕉</li>
+                <li>苹果</li>
+                <li>桃子</li>
+            </ul>
+        </ul>
+        <p class="con_p">今天!</p>
+        <p>明天!</p>
+        <p>后天!</p>
+    </div>
+    <script>
+        $(document).ready(function () {
+            console.log($('.container').siblings());
+            console.log($('.container .con_ul').next().text());
+            console.log($('.container .con_p').prev().html());
+            $('.container .con_ul .con_ull .xj').closest(".con_ull").prev().css('color','red');
+        })
+    </script>
+</body>
+</html>

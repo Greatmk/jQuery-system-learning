@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 600px;
+            height: 200px;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <p class="con_p">我今天7:50到的公司,感觉今天来晚了~~</p>
+        <ul>
+            <li>苹果</li>
+            <li>香蕉</li>
+            <li>西瓜</li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function () {
+            console.log($('.container').css({'border':'1px solid #000','margin-top':'2000px','margin-left':'400px'}));
+            console.log($('.container').offset());
+            console.log($('.container ul').position());
+            console.log($(window).scrollTop(2000));
+
+            /*scrollTop是获取滚动条距离顶部的距离*/
+            /*scrollLeft是获取滚动条距离左侧的距离*/
+
+        })
+    </script>
+</body>
+</html>

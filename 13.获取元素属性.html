@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            width: 500px;
+            height: 80px;
+            outline: none;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box">
+       姓名: <input type="text"><br/><br/>
+       密码: <input type="password" name="psd" id="psd">
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            console.log($('input[type=password]').getAttribute('name'));
+        })
+    </script>
+</body>
+</html>

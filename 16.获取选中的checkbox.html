@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin: auto;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <input type="checkbox" name="check" value="1">
+        <input type="checkbox" name="check" value="2">
+        <input type="checkbox" name="check" value="3">
+        <input type="checkbox" name="check" value="4">
+        <input type="checkbox" name="check" value="5">
+        <input type="checkbox" name="check" value="6">
+        <input type="checkbox" name="check" value="7">
+        <input type="checkbox" name="check" value="8">
+        <input type="button" value="你选中的个数" id="btn">
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                var array = [];
+                $('input[name="check"]').each(function (index,value) {
+                    //jQuery方法
+                      if($(value).is(':checked')){
+//                          console.log(value);
+                         array.push(value.value);
+
+                      }
+                      //DOM方法
+                     /* if(value.checked){
+                          console.log(value);
+                      }*/
+
+                });
+                console.log(array);
+                alert('选中的个数为'+ array.length);
+            });
+        });
+    </script>
+</body>
+</html>

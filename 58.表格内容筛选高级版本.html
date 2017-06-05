@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        table, table tbody tr td, table thead tr th {
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+
+        table tbody tr td, table thead tr th {
+            width: 50px;
+            text-align: center;
+        }
+
+        .even {
+            background-color: #42c9e5;
+        }
+
+        .odd {
+            background-color: #ef5350;
+        }
+
+        .selected {
+            background-color: #1ec623;
+        }
+        table thead tr:first-child th input{
+            border: 1px solid #000;
+            height: 20px;
+            margin:3px auto;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th colspan="4";>快速查找:<input type="text" name="" id="checkSpeed"></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>暂住地</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>小明</td>
+            <td>男</td>
+            <td>上海</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>小红</td>
+            <td>女</td>
+            <td>青岛</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>王李</td>
+            <td>男</td>
+            <td>南京</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>明天</td>
+            <td>男</td>
+            <td>金华</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>小菜</td>
+            <td>女</td>
+            <td>义乌</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>王敏</td>
+            <td>女</td>
+            <td>合肥</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>王小花</td>
+            <td>女</td>
+            <td>湖南</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>李思</td>
+            <td>女</td>
+            <td>安庆</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" ></td>
+            <td>张天</td>
+            <td>女</td>
+            <td>北京</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" ></td>
+            <td>赵晓</td>
+            <td>女</td>
+            <td>青岛</td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    $(function () {
+        $('#checkSpeed').keyup(function () {
+            $('tbody tr').hide().filter(":contains('"+ $(this).val() +"')").show();
+        }).keyup();
+    })
+</script>
+</body>
+</html>

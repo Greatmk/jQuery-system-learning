@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        textarea{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        <div class="msg">
+            <div class="btn">
+                <button id="big">放大</button>
+                <button id="small">缩小</button>
+            </div><br>
+            <div>
+                <textarea name="" id="text" cols="30" rows="10">
+                    多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度
+                    多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度,多行文本框高度,
+                </textarea>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $('#big').on('click',function () {
+                if(!$('#text').is(':animated')){
+                    if($('#text').height() < 500){
+                        $('#text').animate({height:'+=50px'},1000);
+                    }
+                }
+            })
+
+            $('#small').on('click',function () {
+                if(!$('#text').is(':animated')){
+                    if($('#text').height() > 50){
+                        $('#text').animate({height:'-=50px'},1000);
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>

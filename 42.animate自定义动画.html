@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .animate_box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            background-color: #42c9e5;
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="animate_box">
+
+    </div>
+
+    <script>
+        $(function () {
+            /*animate 用法 其实很简单 如下所示 控制方为名称有left,right,top,bottom,一定要注意:使用animate时候一定要给当前元素定位position为relative或absolute*/
+            $('.animate_box').on('click',function () {
+                $(this).animate({left:'+=300px'},1000);
+            })
+
+
+            /*animate累加累减动画,只需要在方为名词设置的时候距离前  += 或 -= */
+            $('.animate_box').on('mouseenter',function () {
+                $(this).animate({left:'+=300px'},1000);
+            })
+
+            /*animate多重动画*/
+            $('.animate_box').on('click',function () {
+                $(this).animate({left:'300px',height:'500px'},1000);
+            })
+
+            /*animate按照试行的顺序,然后执行动画*/
+            $('.animate_box').on('click',function () {
+                $(this).animate({left:'300px'},1000)
+                       .animate({height:'500px'},1000)
+                       .animate({left:'500px'},1000);
+            })
+        })
+    </script>
+</body>
+</html>

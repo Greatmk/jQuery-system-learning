@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .text{
+            width: 300px;
+            height: 500px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+<button class="btn">单击我</button>
+<button class="delAll">点击删除所有事件</button>
+<div class="text"></div>
+
+<script>
+    $(function () {
+        /*one方法只能让其元素绑定一次,当触发一次之后,自动解绑事件!*/
+        $('.btn').one('click',function () {
+            $('.text').append('<p>我是追加的p标签1</p>');
+        })
+
+    })
+</script>
+</body>
+</html>

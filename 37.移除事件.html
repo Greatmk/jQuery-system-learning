@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .text{
+            width: 300px;
+            height: 500px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <button class="btn">单击我</button>
+    <button class="delAll">点击删除所有事件</button>
+    <div class="text"></div>
+
+    <script>
+        $(function () {
+            $('.btn').on('click',fun1 = function () {
+                $('.text').append('<p>我是追加的p标签1</p>');
+            }).on('click',fun2 = function () {
+                $('.text').append('<p>我是追加的p标签2</p>');
+            }).on('click',fun3 = function () {
+                $('.text').append('<p>我是追加的p标签3</p>');
+            })
+
+            $('.delAll').on('click',function () {
+                /*unbind 删除所有click事件,如果unblind没有写参数,则删除所有的绑定的事件,如何提供的一个参数,则删除相应的绑定事件类型*/
+                $('.btn').unbind('click',fun2);
+            });
+        })
+    </script>
+</body>
+</html>

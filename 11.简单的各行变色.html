@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <table id="tb">
+        <tbody>
+            <tr>
+                <td>第一行</td>
+            </tr>
+            <tr>
+                <td>第二行</td>
+            </tr>
+            <tr>
+                <td>第三行</td>
+            </tr>
+            <tr>
+                <td>第四行</td>
+            </tr>
+            <tr>
+                <td>第五行</td>
+            </tr>
+            <tr>
+                <td>第六行</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function () {
+            $('#tb tr').each(function (index,value) {
+                if(index%2 == 0){
+                    value.style.backgroundColor = 'orange';
+                }else{
+                    value.style.backgroundColor = 'skyblue';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

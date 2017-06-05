@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <p>这么晚了,我还在学习jQuery!</p>
+        <ul>
+            <li>jQuery</li>
+            <li>JavaScript</li>
+            <li>HTML5</li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function () {
+            console.log($(window).height());
+            console.log($(window).width());
+
+            $('.container p').css({'font-size':'25px','color':'red','width':'500px','height':'40px','background-color':'skyblue'});
+            console.log($('.container p').width());
+            console.log($('.container p').height());
+        })
+    </script>
+</body>
+</html>

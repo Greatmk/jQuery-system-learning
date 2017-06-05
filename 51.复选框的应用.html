@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery.min.js"></script>
+</head>
+<body>
+    <form action="#">
+        你爱好的运动是?<br>
+        <input type="checkbox" name="checkbox"  value="足球">足球
+        <input type="checkbox" name="checkbox"  value="篮球">篮球
+        <input type="checkbox" name="checkbox"  value="羽毛球">羽毛球
+        <input type="checkbox" name="checkbox"  value="乒乓球">乒乓球<br>
+        <input type="button" id="checkAll" value="全选/全不选">
+        <!--<input type="button" id="checkNo" value="全不选">-->
+        <input type="button" id="checkRev" value="反选">
+        <input type="button" id="send" value="提交">
+    </form>
+
+    <script>
+        /* attr 和 prop 之间的区别 一定要记住: 当对于HTML元素本身就有的固有属性,一般用prop;如果对HTML元素自定义属性,一般用attr*/
+        /*下面的全选和全不选,因为像checkbox,radio,select,他们固有属性就有checked或selected,所以这里用prop,不能用attr,如果用,会报undefined*/
+        $(function () {
+            var flag = true;
+            $('#checkAll').click(function () {
+                if(flag){
+                    flag = false;
+                    $('input[type=checkbox]').prop('checked',true);
+                }else {
+                    flag = true;
+                    $('input[type=checkbox]').prop('checked',false);
+                }
+            })
+
+            $('#checkNo').click(function () {
+                $('input[type=checkbox]').attr('checked',false);
+            })
+
+            $('#checkRev').click(function () {
+                $('input[type=checkbox]').each(function () {
+                    this.checked = !this.checked;
+                })
+            })
+
+            $('#send').click(function () {
+                var str = '你选中的是:\r\n';
+                $('input[type=checkbox]:checked').each(function () {
+                    str += $(this).val() + ' ';
+                })
+                alert(str);
+            })
+
+            /*对于上面的反选按钮,这样的效果,有个最简单的写法就是如下*/
+            $("#checkRev").click(function(){
+                $("input[type=checkbox]").click();
+            })
+        })
+    </script>
+</body>
+</html>
